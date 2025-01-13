@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail ChatGPT Assistant",
+  "version": "1.0",
+  "description": "Generate email drafts using ChatGPT",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "options_page": "options.html"
+}
